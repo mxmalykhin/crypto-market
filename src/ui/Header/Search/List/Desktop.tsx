@@ -101,8 +101,8 @@ export default function DesktopListSuggestions() {
                 </div>
 
                 {visibleSearchResults
-                  ? searchResults.map((item) => (
-                      <Item key={item.symbol} token={item} />
+                  ? searchResults.map((item, i) => (
+                      <Item key={`${item.symbol}-${i}`} token={item} />
                     ))
                   : null}
 
