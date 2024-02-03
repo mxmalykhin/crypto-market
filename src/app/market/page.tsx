@@ -1,7 +1,7 @@
 import Footer from '@/ui/Footer';
 import Header from '@/ui/Header';
 
-export default async function Market() {
+export default function Market() {
   return (
     <div>
       <Header />

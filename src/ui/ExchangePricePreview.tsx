@@ -2,7 +2,7 @@ import HelpCircle from '@/shared/icons/HelpCircle';
 import { CurrencySymbol } from '@/types/CurrencySymbol';
 import { PaymentToken, TargetToken } from '@/types/Token';
 import Badge from '@/ui/Badge';
-import { Tooltip } from '@nextui-org/react';
+// import { Tooltip } from '@nextui-org/react';
 
 type TExchangePricePreviewProps = {
   targetCoin: TargetToken;
@@ -25,9 +25,9 @@ export default function ExchangePricePreview({
         </span>
 
         {/* FIXME: set dynamic content */}
-        <Tooltip showArrow content="I am a tooltip" size="sm">
-          <HelpCircle />
-        </Tooltip>
+        {/* <Tooltip showArrow content="I am a tooltip" size="sm"> */}
+        <HelpCircle />
+        {/* </Tooltip> */}
       </div>
 
       <div className="mt-2">

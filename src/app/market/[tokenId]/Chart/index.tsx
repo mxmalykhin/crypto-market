@@ -326,10 +326,10 @@ function Chart(props: TChartProps) {
 
     window.addEventListener('resize', handleResize);
 
-    const intervalId = setInterval(updateData, 1000);
+    // const intervalId = setInterval(updateData, 1000);
 
     return () => {
-      clearInterval(intervalId);
+      // clearInterval(intervalId);
       window.removeEventListener('resize', handleResize);
       chart.remove();
     };

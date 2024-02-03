@@ -1,31 +1,29 @@
 'use client';
 
 import Link from 'next/link';
-import useSWR from 'swr';
 
-import { publicRaydiumApi } from '@/shared/api/raydium';
 import SolscanIcon from '@/shared/icons/SolscanIcon';
 import InfoArea from '@/ui/Info/Column/Area';
 import Column from '@/ui/Info/Column/Column';
 import Property from '@/ui/Info/Column/Property';
 import TruncatedAddress from '@/ui/TruncatedAddress';
-import { PublicKey } from '@solana/web3.js';
 
 import { useMarketContext } from './store';
 
 export default function PairInfo() {
   const { token, pool } = useMarketContext((s) => s);
+  // eslint-disable-next-line
   const { id: poolId, marketId } = pool;
 
-  const { data } = useSWR(
-    [marketId, 'baseAmount', 'quoteAmount'],
-    ([marketId]) => {
-      return publicRaydiumApi.fetchRaydiumPoolsLiquidity({
-        marketId: new PublicKey(marketId),
-        poolId: new PublicKey(poolId),
-      });
-    },
-  );
+  // const { data } = useSWR(
+  //   [marketId, 'baseAmount', 'quoteAmount'],
+  //   ([marketId]) => {
+  //     return publicRaydiumApi.fetchRaydiumPoolsLiquidity({
+  //       marketId: new PublicKey(marketId),
+  //       poolId: new PublicKey(poolId),
+  //     });
+  //   },
+  // );
 
   return (
     <InfoArea
@@ -33,9 +31,14 @@ export default function PairInfo() {
         //TODO: format lamports, do we need decimals?
         {
           property: `Pooled ${token.symbol}`,
-          value: data?.baseAmount?.uiAmountString,
+          // value: data?.baseAmount?.uiAmountString,
+          value: '3478368829.57055',
         },
-        { property: 'Pooled SOL', value: data?.quoteAmount?.uiAmountString },
+        {
+          property: 'Pooled SOL',
+          // value: data?.quoteAmount?.uiAmountString,
+          value: '364.783204211',
+        },
       ]}
     >
       <Column>

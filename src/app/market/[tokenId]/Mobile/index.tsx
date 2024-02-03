@@ -9,11 +9,12 @@ import TetraArea from '@/ui/Info/Tetrahedral/Area';
 import LastTransactions from '@/ui/LastTransactions';
 
 import LaunchChart from '../Chart';
+import SeriesTypes from '../Chart/SeriesTypes';
 import PairInfo from '../PairInfo';
 import { useMarketContext } from '../store';
 import ExchangeDetails from './Exchange';
 
-export default async function MobileMarketTokenPage() {
+export default function MobileMarketTokenPage() {
   const { market } = useMarketContext((s) => s);
 
   return (
@@ -23,7 +24,7 @@ export default async function MobileMarketTokenPage() {
 
         <div className="relative mb-2 flex h-full flex-col">
           <div className="z-5 relative flex grow flex-col items-end justify-center rounded-2xl bg-secondary-bg">
-            {/* <SeriesTypes /> */}
+            <SeriesTypes type="candle" onClick={() => {}} />
             <LaunchChart />
           </div>
 

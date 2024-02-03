@@ -17,7 +17,7 @@ import {
   type TokenAccount,
 } from '@raydium-io/raydium-sdk';
 import { Connection, PublicKey } from '@solana/web3.js';
-import { privateSolanaConnection, publicSolanaConnetion } from './solana';
+// import { privateSolanaConnection, publicSolanaConnetion } from './solana';
 
 export class RaydiumApi {
   constructor(private connection: Connection) {}
@@ -254,8 +254,10 @@ export class RaydiumApi {
   }
 }
 
-export const privateRaydiumApi = new RaydiumApi(privateSolanaConnection);
-export const publicRaydiumApi = new RaydiumApi(publicSolanaConnetion);
+// export const privateRaydiumApi = new RaydiumApi(privateSolanaConnection);
+// export const publicRaydiumApi = new RaydiumApi(publicSolanaConnetion);
+export const privateRaydiumApi = null;
+export const publicRaydiumApi = null;
 
 async function fetchWalletTokenAccounts(
   connection: Connection,
