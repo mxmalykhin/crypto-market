@@ -289,6 +289,7 @@ function Chart(props: TChartProps) {
             lineColor: 'rgb(101, 31, 255)',
           });
 
+    // eslint-disable-next-line
     const updateData = () => {
       const newDate = new Date();
       newDate.setMinutes(newDate.getMinutes() - (newDate.getMinutes() % 5));

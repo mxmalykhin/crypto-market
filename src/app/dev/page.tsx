@@ -3,9 +3,7 @@
 import { Suspense, useMemo, useState } from 'react';
 import useSWR from 'swr';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { raydiumApi } from '@/shared/api/raydium';
+import { RaydiumApi } from '@/shared/api/raydium';
 import { publicSolanaConnetion } from '@/shared/api/solana';
 import { DEMO_TOKEN, TOKEN_SOL } from '@/shared/constants';
 import { formatTokenPrice } from '@/shared/format';
@@ -75,13 +73,18 @@ const DevBuyTest = ({}) => {
   );
 
   const buy = async () => {
-    const buyIx = await raydiumApi.composeSwapTx(
-      'buy',
-      wallet.publicKey!,
-      10,
-      new PublicKey(tokenId),
-      1,
-    );
+    // const buyIx = await RaydiumApi.composeSwapTx(
+    //   'buy',
+    //   wallet.publicKey!,
+    //   10,
+    //   new PublicKey(tokenId),
+    //   1,
+    // );
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const buyIx = {} as any;
 
     const blockhash = await publicSolanaConnetion.getLatestBlockhash();
     const msg = new TransactionMessage({
@@ -108,13 +111,18 @@ const DevBuyTest = ({}) => {
   };
 
   const sell = async () => {
-    const buyIx = await raydiumApi.composeSwapTx(
-      'sell',
-      wallet.publicKey!,
-      100,
-      new PublicKey(tokenId),
-      1, // % or what?
-    );
+    // const buyIx = await RaydiumApi.composeSwapTx(
+    //   'sell',
+    //   wallet.publicKey!,
+    //   100,
+    //   new PublicKey(tokenId),
+    //   1, // % or what?
+    // );
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const buyIx = {} as any;
 
     const blockhash = await publicSolanaConnetion.getLatestBlockhash();
     const msg = new TransactionMessage({
