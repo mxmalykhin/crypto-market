@@ -3,7 +3,7 @@
 import { Suspense, useMemo, useState } from 'react';
 import useSWR from 'swr';
 
-import { RaydiumApi } from '@/shared/api/raydium';
+// import { RaydiumApi } from '@/shared/api/raydium';
 import { publicSolanaConnetion } from '@/shared/api/solana';
 import { DEMO_TOKEN, TOKEN_SOL } from '@/shared/constants';
 import { formatTokenPrice } from '@/shared/format';
@@ -26,7 +26,7 @@ import {
 const DevBuyTest = ({}) => {
   const wallet = useWallet();
 
-  const tokenId = 'FuvFLtx68uGjhr4GWET8JTskC7s3R7MM4Feg8toyzFvf';
+  // const tokenId = 'FuvFLtx68uGjhr4GWET8JTskC7s3R7MM4Feg8toyzFvf';
   const marketId = 'FGVpVMcZ9sYaYnajF7MmNBsoqyeNCKzsZ5tBTkcCogW6';
   // const poolId = Liquidity.getAssociatedId({
   //   programId: MAINNET_PROGRAM_ID.AmmV4,
